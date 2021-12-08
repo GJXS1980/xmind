@@ -1,0 +1,4 @@
+ui/*
+js/lib/svg.js
+js/lib/tinycolor.js
+formatconverter/lib/bplistParser.js

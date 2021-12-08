@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "baseUrl": ".",
+    "paths": {
+      "sb_core/*": [
+        "./js/core/*"
+      ],
+      "sb_models/*": [
+        "./js/models/*"
+      ],
+      "sb_modules/*": [
+        "./js/modules/*"
+      ],
+      "sb_structures/*": [
+        "./js/structures/*"
+      ],
+      "sb_figures/*": [
+        "./js/figures/*"
+      ],
+      "sb_renderengine/*": [
+        "./js/figures/renderengine/*"
+      ]
+    }
+  },
+  "include": [
+    "js/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>orange</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="31.6444444" cy="31.3555556" r="18.9037037"></circle>
+    </defs>
+    <g id="orange" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+        <path d="M31.6444444,54.5932593 C18.8106151,54.5932593 8.40674074,44.1893849 8.40674074,31.3555556 C8.40674074,18.5217262 18.8106151,8.11785185 31.6444444,8.11785185 C44.4782738,8.11785185 54.8821481,18.5217262 54.8821481,31.3555556 C54.8821481,44.1893849 44.4782738,54.5932593 31.6444444,54.5932593 Z" id="Oval-51" fill="#FFFFFF" fill-rule="nonzero"></path>
+        <g id="Oval-51">
+            <use fill="#FFDC64" fill-rule="evenodd" xlink:href="#path-1"></use>
+            <circle stroke="#2B2B2B" stroke-width="3.334" cx="31.6444444" cy="31.3555556" r="20.5707037"></circle>
+            <circle stroke="#FFFFFF" stroke-width="1.667" cx="31.6444444" cy="31.3555556" r="19.7372037"></circle>
+        </g>
+        <polygon id="Combined-Shape" fill="#FFC55D" fill-rule="nonzero" points="32.5037037 33.5439687 32.5037037 50.2666016 30.7851852 50.2666016 30.7851852 33.5860036 19.0701232 45.5242812 17.8435342 44.3206262 29.7229975 32.2148148 12.7606698 32.2148148 12.7606698 30.4962963 29.4297986 30.4962963 17.542634 18.7105768 18.7525917 17.4902045 30.7851852 29.4201119 30.7851852 12.4671658 32.5037037 12.4671658 32.5037037 29.3811258 44.322397 17.3372423 45.5489861 18.5408972 33.8171227 30.4962963 50.5257017 30.4962963 50.5257017 32.2148148 33.6039433 32.2148148 45.6203868 44.12871 44.4104292 45.3490823"></polygon>
+        <circle id="Oval-51" fill="#FFC55D" cx="31.6666667" cy="31.6666667" r="2.66666667"></circle>
+    </g>
+</svg>

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Link to the binary
+ln -sf '/opt/XMind ZEN/XMind' '/usr/local/bin/XMind'

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+  <style>
+    #page_content {
+      position: absolute;
+      overflow: scroll;
+      top: 50px;
+      right: 50px;
+      left: 50px;
+      bottom: 50px;
+      border: 1px solid;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .editor-content {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+
+    .operation {
+      position: absolute;
+      left: 50px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="operation">
+    <input type="file" id="filedlg" style="display:none">
+    <a href="#" id="xmind">xmind</a>
+    <a href="#" id="lighten">lighten</a>
+    <a href="#" id="freemind">freemind</a>
+    <a href="#" id="mindmanager">mindmanager</a>
+    <a href="#" id="collapse">collapse</a>
+    <a href="#" id="extend">extend</a>
+  </div>
+  <div id="page_content">
+  </div>
+  <script src="/readonly-vendor.js"></script>
+  <script src="/readonly.js"></script>
+
+  <script>
+    const Snowbrush = window._SB_
+
+    const openFile = function (type) {
+      let options = {
+        languageCode: 'zh-CN',
+        resourceUrlPrefix: '/'
+      }
+      let url
+      let responseType
+      switch (type) {
+        case 'xmind':
+          options.type = 'xmind'
+          url = '/test.xmind'
+          responseType = 'arraybuffer'
+          break
+        case 'freemind':
+          options.type = 'freemind'
+          url = '/test.mm'
+          responseType = 'string'
+          break
+        case 'lighten':
+          options.type = 'lighten'
+          url = '/test.lighten'
+          responseType = 'arraybuffer'
+          break
+        case 'mindmanager':
+          options.type = 'mindmanager'
+          url = '/test.mmap'
+          responseType = 'arraybuffer'
+          break
+      }
+      var oReq = new XMLHttpRequest();
+      oReq.addEventListener('load', e => {
+        if (window._we_) {
+          window._we_.close()
+          window._we_ = null
+        }
+        const el = document.getElementById("page_content")
+        let editorContent = document.createElement('div')
+        editorContent.classList.add('editor-content')
+        el.appendChild(editorContent)
+        Snowbrush.createWorkbookEditor(oReq.response, editorContent, options).then(we => {
+          we.switchSheetTo(0)
+          window._we_ = we
+        }).catch(e => {
+          if (e == 'PasswordError') {
+            options.password = 'test'
+            Snowbrush.createWorkbookEditor(oReq.response, editorContent, options).then(we => {
+              we.switchSheetTo(0)
+              window._we_ = we
+            })
+          }
+        })
+      });
+      oReq.addEventListener('error', e => console.log(e));
+      oReq.addEventListener('abort', e => console.log(e));
+      oReq.open('GET', url);
+      oReq.setRequestHeader("Cache-Control", "no-cache");
+      oReq.setRequestHeader('Content-type', 'application/x-www-form-urlencoded; charset=utf-8')
+      oReq.responseType = responseType;
+      oReq.send();
+    }
+
+    document.getElementById('xmind').addEventListener('click', () => openFile('xmind'))
+    document.getElementById('freemind').addEventListener('click', () => openFile('freemind'))
+    document.getElementById('lighten').addEventListener('click', () => openFile('lighten'))
+    document.getElementById('mindmanager').addEventListener('click', () => openFile('mindmanager'))
+    document.getElementById('collapse').addEventListener('click', () => {
+      console.log(window._we_)
+      window._we_.collapseBranch()
+    })
+    document.getElementById('extend').addEventListener('click', () => {
+      window._we_.extendBranch()
+    })
+
+    openFile('xmind')
+
+  </script>
+
+</body>
+
+</html>

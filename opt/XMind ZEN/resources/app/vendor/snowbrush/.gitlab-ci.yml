@@ -1,0 +1,46 @@
+stages:
+  - docker
+  - prebuild
+  - build
+  - test
+  - deploy
+
+variables:
+  IMAGE_NAME: $DOCKER_REGISTRY_HOST/snowbrush
+  IMAGE_TAG: build-$CI_PIPELINE_ID
+  DEFAULT_TAG: latest
+  GIT_SUBMODULE_STRATEGY: recursive
+
+generate_dist_job:
+  image: node:8.9.1-alpine
+  stage: prebuild
+  only:
+    - develop
+  artifacts:
+    paths:
+      - dist
+
+  script:
+    - apk update && apk add openssh
+    - apk update && apk add git
+    - mkdir -p ~/.ssh
+    - echo "${RSA_KEY}" >> ~/.ssh/snowbrush
+    - chmod 0400 ~/.ssh/snowbrush
+    - git config --global core.sshCommand "ssh -i ~/.ssh/snowbrush -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -F /dev/null"
+    - git config --global core.autocrlf input
+    - git config --global core.autocrlf input
+    - git config --global user.name "snowbrush-builder"
+    - git config --global user.email "snowbrush-builder@xmind.net"
+    - git remote set-url origin ssh://git@hq.xmind.cn:30001/xmind/snowbrush.git
+    - git checkout -b release origin/release || git checkout release
+    - git merge -Xtheirs origin/develop
+    - npm install
+    - npm run increase-release
+    - npm run build -- --target=snowbrush
+    - git add .
+    - git commit -m "Release for `git log -1`"
+    - git push origin release
+  allow_failure: true
+
+
+

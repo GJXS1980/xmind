@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <circle id="progress_1o@16-a" cx="10" cy="10" r="10"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <use fill="#FFF" xlink:href="#progress_1o@16-a"/>
+    <circle cx="10" cy="10" r="9.4" stroke="#28CC5D" stroke-width="1.2"/>
+    <path fill="#28CC5D" d="M10,0 C13.7600088,0 17.0353358,2.07516913 18.7431617,5.14268795 L10,10 L10,0 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+Package: xmind-vana
+Version: 9.0.6
+License: https://www.xmind.net/license/xpla/
+Vendor: XMind Ltd. <support@xmind.net>
+Architecture: amd64
+Maintainer: XMind Ltd. <support@xmind.net>
+Installed-Size: 261009
+Depends: gconf2, gconf-service, libnotify4, libappindicator1, libxtst6, libnss3, libxss1
+Section: Graphics
+Priority: extra
+Homepage: https://www.xmind.net/
+Description: 
+  XMind - The most popular mind mapping software.

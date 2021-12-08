@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <circle id="emotion_surprise@16-a" cx="5.647" cy="7.059" r="1.412"/>
+    <circle id="emotion_surprise@16-b" cx="14.118" cy="7.059" r="1.412"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(-163 -90)">
+    <rect width="24" height="24" x="161" y="88"/>
+    <g transform="translate(163 90)">
+      <circle cx="9.882" cy="9.882" r="9.882" fill="#FFBF2C"/>
+      <circle cx="9.882" cy="14.118" r="2.824" fill="#4C4023"/>
+      <path fill="#E74643" d="M7.43656149,15.5294118 C7.92476303,14.6854569 8.83724844,14.1176471 9.88235294,14.1176471 C10.9274574,14.1176471 11.8399429,14.6854569 12.3281444,15.5294118 C11.8399429,16.3733666 10.9274574,16.9411765 9.88235294,16.9411765 C8.83724844,16.9411765 7.92476303,16.3733666 7.43656149,15.5294118 Z"/>
+      <use fill="#4C4023" xlink:href="#emotion_surprise@16-a"/>
+      <circle cx="5.647" cy="7.059" r="2.118" stroke="#FFF" stroke-width="1.412"/>
+      <g>
+        <use fill="#4C4023" xlink:href="#emotion_surprise@16-b"/>
+        <circle cx="14.118" cy="7.059" r="2.118" stroke="#FFF" stroke-width="1.412"/>
+      </g>
+    </g>
+  </g>
+</svg>

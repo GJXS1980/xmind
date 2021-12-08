@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <circle id="progress_start@16-a" cx="9.882" cy="9.882" r="9.882"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <use fill="#FFF" xlink:href="#progress_start@16-a"/>
+    <circle cx="9.882" cy="9.882" r="9.294" stroke="#28CC5D" stroke-width="1.176"/>
+    <polygon fill="#28CC5D" points="7.059 4.235 7.059 15.529 15.529 9.882"/>
+  </g>
+</svg>
